@@ -1,0 +1,203 @@
+[
+  {
+    "id": 1,
+    "nombre": "Torta Selva Negra",
+    "descripcion": "Bizcocho negro, crema chantilly y mermelada de guinda ácida.",
+    "imagen": "/assets/img/torta-selva-negra.jpg",
+    "categoriaId": 1,
+    "tamaños": [
+      { "personas": 12, "precio": 42000, "nutricion": { "peso": "2.2 kg", "energia": "6480 kcal", "porcion": "540 kcal", "proteinas": "7 g", "grasas": "29 g", "carbohidratos": "63 g", "azucares": "45 g", "sodio": "320 mg" }},
+      { "personas": 16, "precio": 56000 },
+      { "personas": 20, "precio": 70000 },
+      { "personas": 25, "precio": 87500 },
+      { "personas": 30, "precio": 105000 },
+      { "personas": 40, "precio": 119550 },
+      { "personas": 50, "precio": 134100 }
+    ],
+    "notas": "*Valores aproximados. Contiene gluten, huevo, leche, nueces y derivados."
+  },
+  {
+    "id": 2,
+    "nombre": "Torta Tres Leches",
+    "descripcion": "Bizcocho blanco bañado en mezcla de leches, cubierto con merengue y crema chantilly.",
+    "imagen": "/assets/img/torta-tres-leches.jpeg",
+    "categoriaId": 1,
+    "tamaños": [
+      { "personas": 12, "precio": 42000, "nutricion": { "peso": "2.3 kg", "energia": "6620 kcal", "porcion": "552 kcal", "proteinas": "8 g", "grasas": "27 g", "carbohidratos": "66 g", "azucares": "47 g", "sodio": "310 mg" }},
+      { "personas": 16, "precio": 56000 },
+      { "personas": 20, "precio": 70000 },
+      { "personas": 25, "precio": 87500 },
+      { "personas": 30, "precio": 105000 },
+      { "personas": 40, "precio": 119550 },
+      { "personas": 50, "precio": 134100 }
+    ],
+    "notas": "*Valores aproximados. Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 3,
+    "nombre": "Brazo de Reina Lúcuma",
+    "descripcion": "Bizcochuelo blanco con crema de lúcuma, cubierto con chocolate y cereales grageados.",
+    "imagen": "/assets/img/brazo-lucuma.jpeg",
+    "categoriaId": 2,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 42000, "nutricion": { "peso": "1.8 kg", "energia": "5900 kcal", "porcion": "490 kcal", "proteinas": "6 g", "grasas": "28 g", "carbohidratos": "58 g", "azucares": "42 g", "sodio": "280 mg" }}
+    ],
+    "notas": "*Valores aproximados. Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 4,
+    "nombre": "Brazo de Reina Mocca",
+    "descripcion": "Bizcochuelo blanco con crema mocca, licor de café y praliné de almendras.",
+    "imagen": "/assets/img/brazo-mocca.jpg",
+    "categoriaId": 2,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 42000, "nutricion": { "peso": "1.8 kg", "energia": "6050 kcal", "porcion": "505 kcal", "proteinas": "6 g", "grasas": "29 g", "carbohidratos": "60 g", "azucares": "43 g", "sodio": "285 mg" }}
+    ],
+    "notas": "*Valores aproximados. Contiene gluten, huevo, leche, café y nueces."
+  },
+  {
+    "id": 5,
+    "nombre": "Torta Hojarasca Manjar Chantilly Nuez",
+    "descripcion": "Capas de hojarasca con manjar, crema chantilly y trozos de nuez.",
+    "imagen": "/assets/img/torta-hojarasca-nuez.jpg",
+    "categoriaId": 3,
+    "tamaños": [
+      { "personas": 12, "precio": 42000 },
+      { "personas": 16, "precio": 56000 },
+      { "personas": 20, "precio": 70000 },
+      { "personas": 25, "precio": 87500 },
+      { "personas": 30, "precio": 105000 },
+      { "personas": 40, "precio": 119550 },
+      { "personas": 50, "precio": 134100 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y nueces."
+  },
+  {
+    "id": 6,
+    "nombre": "Torta Hojarasca Manjar con Frambuesa",
+    "descripcion": "Torta de hojarasca rellena con manjar y mermelada natural de frambuesa.",
+    "imagen": "/assets/img/torta-hojarasca-frambuesa.jpg",
+    "categoriaId": 3,
+    "tamaños": [
+      { "personas": 12, "precio": 42000 },
+      { "personas": 16, "precio": 56000 },
+      { "personas": 20, "precio": 70000 },
+      { "personas": 25, "precio": 87500 },
+      { "personas": 30, "precio": 105000 },
+      { "personas": 40, "precio": 119550 },
+      { "personas": 50, "precio": 134100 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 7,
+    "nombre": "Kuchen de Frutilla",
+    "descripcion": "Kuchen de frutillas frescas con crema pastelera y masa artesanal.",
+    "imagen": "/assets/img/kuchen-frutilla.jpg",
+    "categoriaId": 4,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 35500 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 8,
+    "nombre": "Kuchen de Manzana Streusel",
+    "descripcion": "Kuchen de manzanas caramelizadas con miga streusel crocante.",
+    "imagen": "/assets/img/kuchen-manzana.jpg",
+    "categoriaId": 4,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 35500 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 9,
+    "nombre": "Chilenitos (Docena)",
+    "descripcion": "Pastelitos individuales rellenos con manjar y espolvoreados con azúcar flor.",
+    "imagen": "/assets/img/chilenitos.jpg",
+    "categoriaId": 5,
+    "tamaños": [
+      { "descripcion": "Docena", "precio": 12000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 10,
+    "nombre": "Cachitos (Docena)",
+    "descripcion": "Masas rellenas con manjar, horneadas hasta dorar y espolvoreadas con azúcar flor.",
+    "imagen": "/assets/img/cachitos.jpg",
+    "categoriaId": 5,
+    "tamaños": [
+      { "descripcion": "Docena", "precio": 12000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  },
+  {
+    "id": 11,
+    "nombre": "Cheesecake de Maracuyá",
+    "descripcion": "Queso crema horneado con mermelada de maracuyá y crocante de almendras.",
+    "imagen": "/assets/img/cheesecake-maracuya.jpg",
+    "categoriaId": 6,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 35000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y frutos secos."
+  },
+  {
+    "id": 12,
+    "nombre": "Cheesecake de Frambuesa",
+    "descripcion": "Queso crema horneado con frambuesas naturales y base de galletas.",
+    "imagen": "/assets/img/cheesecake-frambuesa.jpg",
+    "categoriaId": 6,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 35000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y frutos secos."
+  },
+  {
+    "id": 13,
+    "nombre": "Berlín Manjar",
+    "descripcion": "Berlín artesanal relleno con manjar y espolvoreado con azúcar flor.",
+    "imagen": "/assets/img/berlin-manjar.jpg",
+    "categoriaId": 7,
+    "tamaños": [
+      { "descripcion": "Unidad", "precio": 2800 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche."
+  },
+  {
+    "id": 14,
+    "nombre": "Galletas Lengua de Gato con Chocolate",
+    "descripcion": "Crujientes galletas largas bañadas parcialmente en chocolate.",
+    "imagen": "/assets/img/galletas-lengua-gato.jpg",
+    "categoriaId": 7,
+    "tamaños": [
+      { "descripcion": "100 gramos", "precio": 5000 },
+      { "descripcion": "200 gramos", "precio": 9000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche."
+  },
+  {
+    "id": 15,
+    "nombre": "Pan de Pascua de Frutos Secos",
+    "descripcion": "Queque tradicional con frutos secos, nueces, almendras y cáscaras confitadas.",
+    "imagen": "/assets/img/pan-de-pascua.jpg",
+    "categoriaId": 8,
+    "tamaños": [
+      { "descripcion": "1 kg", "precio": 15000 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y frutos secos."
+  },
+  {
+    "id": 16,
+    "nombre": "Torta de Cuchuflís para Cumpleaños",
+    "descripcion": "Torta de cuchuflís artesanales rellenos con manjar y base de merengue.",
+    "imagen": "/assets/img/torta-cuchuflis.jpg",
+    "categoriaId": 8,
+    "tamaños": [
+      { "descripcion": "Tamaño único", "precio": 90200 }
+    ],
+    "notas": "*Contiene gluten, huevo, leche y derivados."
+  }
+]
