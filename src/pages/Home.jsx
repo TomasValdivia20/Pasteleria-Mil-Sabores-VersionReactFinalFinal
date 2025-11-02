@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/Home.css";
+
 
 // Importar imágenes desde assets
 import introImg from "../assets/img/Pasteleria Index.jpg";

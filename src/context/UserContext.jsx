@@ -1,7 +1,7 @@
 // src/context/UserContext.jsx
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-const UserContext = createContext();
+export const UserContext = createContext(null);
 
 // Este será el proveedor que envolverá toda tu app
 export function UserProvider({ children }) {

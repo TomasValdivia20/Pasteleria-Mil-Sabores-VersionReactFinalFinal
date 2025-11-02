@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+/* --- BLOQUE DE CSS --- */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/general.css";
+import "./css/catalogo.css";
+import "./css/Home.css";
 
 // Contextos
 import { UserProvider } from "./context/UserContext";
@@ -21,6 +24,7 @@ import Perfil from "./pages/Perfil";
 import ConfirmacionCompra from "./pages/ConfirmacionCompra";
 import ProductDetail from "./pages/ProductDetail"; // ✅ Página de detalle de producto
 import AcercaDeNosotros from "./pages/AcercaDeNosotros";
+import CategoriaDetallePage from "./pages/CategoriaDetallePage";
 
 // Blogs
 import CategoriaBlogs from "./pages/CategoriaBlogs";
@@ -51,10 +55,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/acercadenosotros" element={<AcercaDeNosotros />} />
               <Route path="/productos" element={<Categorias />} /> {/* muestra las categorías */}
-              <Route
-                path="/productos/:categoriaId"
-                element={<ProductosList />}
-              /> {/* muestra productos de una categoría */}
+              <Route path="/productos/:categoriaId" element={<CategoriaDetallePage />} />
               <Route
                 path="/producto/:id"
                 element={<ProductDetail />}

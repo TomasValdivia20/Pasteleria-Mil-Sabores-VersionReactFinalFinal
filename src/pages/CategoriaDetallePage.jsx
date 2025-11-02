@@ -1,7 +1,7 @@
 // src/pages/CategoriaDetallePage.jsx
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { cargarProductos } from "../assets/data/dataLoader";
+import { useParams, Link } from "react-router-dom";
+import { cargarProductos, cargarCategorias } from "../assets/data/dataLoader";
 import "../css/catalogo.css";
 
 function CategoriaDetallePage() {
@@ -32,12 +32,15 @@ function CategoriaDetallePage() {
 
   return (
     <section className="catalogo-container">
-      <h2 className="titulo-seccion">{categoria.nombre}</h2>
-      <p className="categoria-descripcion">{categoria.descripcion}</p>
+      <div className="categoria-info">
+        <h2 className="titulo-seccion">{categoria.nombre}</h2>
+        <p className="categoria-descripcion">{categoria.descripcion}</p>
+      </div>
+
 
       <div className="productos-grid">
         {productos.map((producto) => (
-          <div key={producto.id} className="producto-card">
+          <Link key={producto.id} to={`/producto/${producto.id}`} className="producto-card">
             <img
               src={producto.imagen}
               alt={producto.nombre}
@@ -45,9 +48,9 @@ function CategoriaDetallePage() {
             />
             <h3 className="producto-nombre">{producto.nombre}</h3>
             <p className="producto-precio">
-              Desde ${producto.precios?.[0]?.precio || "—"}
-            </p>
-          </div>
+            Desde ${producto.tamaños?.[0]?.precio.toLocaleString("es-CL") || "—"}
+          </p>
+          </Link>
         ))}
       </div>
     </section>

@@ -106,3 +106,91 @@
   color: #6c4c2a;
   padding: 2rem;
 }
+
+/* --- Estilos para Descuento y Total --- */
+
+.descuento-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.descuento-input {
+  flex-grow: 1; /* Ocupa el espacio disponible */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #4b1e0b;
+}
+
+.descuento-input::placeholder {
+  color: #a09a96; /* Un color gris/beige para el placeholder */
+  opacity: 1; /* Firefox necesita esto */
+}
+
+.btn-aplicar {
+  padding: 10px 15px;
+  background-color: #4b1e0b; /* Marrón oscuro */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-aplicar:hover {
+  background-color: #6a3a2a;
+}
+
+.descuento-mensaje {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.descuento-mensaje.exito {
+  color: green;
+}
+
+.descuento-mensaje.error {
+  color: red;
+}
+
+.resumen-total {
+  margin-top: 20px;
+  text-align: right;
+  color: #4b1e0b;
+}
+
+.resumen-total p,
+.resumen-total h3 {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.resumen-total h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.resumen-total span {
+  display: inline-block;
+  min-width: 120px; /* Alinea los números */
+  text-align: right;
+}
+
+.resumen-total .descuento-aplicado {
+  color: #c15c2e; /* Naranja */
+  font-weight: bold;
+}
+
+.resumen-total hr {
+  margin: 10px 0;
+  border-color: #e0d5c9;
+}
+
+.mensaje-error-confirmacion {
+  color: #d9534f; /* Un color rojo de error */
+  font-weight: bold;
+  margin-top: 15px;
+  text-align: center;
+}

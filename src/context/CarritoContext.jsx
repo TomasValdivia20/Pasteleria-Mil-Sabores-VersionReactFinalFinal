@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-export const CarritoContext = createContext(); // ✅ exportación directa
+export const CarritoContext = createContext(null); // ✅ exportación directa
 
 export const CarritoProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);

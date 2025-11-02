@@ -113,3 +113,27 @@
     padding: 1.5rem;
   }
 }
+
+/* --- Arreglo para sobrescribir Bootstrap --- */
+
+/* 1. Arreglo para el botón "¡Regístrate!" */
+/* Usamos .intro-button .btn-primary para ser más específicos */
+.intro-button .btn-primary {
+  background-color: #c15c2e !important; /* Tu color naranja/terracota */
+  border-color: #c15c2e !important;
+  color: #ffffff !important; /* Texto blanco */
+}
+
+/* 2. Estilo hover para el botón (opcional pero recomendado) */
+.intro-button .btn-primary:hover {
+  background-color: #a04a23 !important; /* Un tono más oscuro */
+  border-color: #a04a23 !important;
+  color: #ffffff !important;
+}
+
+/* 3. Arreglo para el link "aquí" de la sección de registro */
+.registrate-aqui a {
+  /* Asumo que este es el color rosa que tenías */
+  color: #e75480 !important; 
+  text-decoration: underline !important;
+}
