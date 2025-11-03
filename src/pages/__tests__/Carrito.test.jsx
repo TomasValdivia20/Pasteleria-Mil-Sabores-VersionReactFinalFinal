@@ -1,10 +1,12 @@
 // Importaciones necesarias
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { MemoryRouter } from 'react-router-dom';
 
 // Componente y Contexto
 import Carrito from '../Carrito'; // Ajusta la ruta si es necesario
 import { CarritoContext } from '../../context/CarritoContext'; // Ajusta la ruta
+import { UserContext } from '../../context/UserContext';
 
 // ---- 1. Datos de Prueba (Mock) ----
 const mockItems = [
@@ -18,17 +20,21 @@ const mockEliminarDelCarrito = vi.fn();
 const mockVaciarCarrito = vi.fn();
 
 // ---- 3. Helper de Renderizado ----
-const renderCarritoConContexto = (items = []) => {
+const renderCarritoConContexto = (items = [], usuarioMock = null) => {
   render(
-    <CarritoContext.Provider
-      value={{
-        carrito: items,
-        eliminarDelCarrito: mockEliminarDelCarrito,
-        vaciarCarrito: mockVaciarCarrito,
-      }}
-    >
-      <Carrito />
-    </CarritoContext.Provider>
+    <MemoryRouter> { /* <-- 1. ENVUELVE CON EL ROUTER */ }
+      <UserContext.Provider value={{ usuario: usuarioMock }}>
+        <CarritoContext.Provider
+          value={{
+            carrito: items,
+            eliminarDelCarrito: mockEliminarDelCarrito,
+            vaciarCarrito: mockVaciarCarrito,
+          }}
+        >
+          <Carrito />
+        </CarritoContext.Provider>
+      </UserContext.Provider>
+    </MemoryRouter> 
   );
 };
 
@@ -75,14 +81,14 @@ describe('Componente Carrito', () => {
     const instanciasDiezMil = screen.getAllByText("$10.000");
 
     // Verificamos el total ($10.000 + $10.000 = $20.000)
-    const total = screen.getByText(/Total: \$20\.000/i);
+    const totalHeading = screen.getByRole('heading', { name: /Total:/i, level: 3 });
 
     // ASSERT
     expect(item1).toBeInTheDocument();
     expect(item2).toBeInTheDocument();
     expect(precioPie).toBeInTheDocument(); // Verificamos el precio del pie
     expect(instanciasDiezMil.length).toBe(3); // <-- ¡Arreglado!
-    expect(total).toBeInTheDocument();
+    expect(totalHeading).toHaveTextContent("$20.000");
 
     // El mensaje de vacío NO debe estar
     expect(screen.queryByText(/Tu carrito está vacío/i)).not.toBeInTheDocument();

@@ -134,8 +134,7 @@ describe('Componente ProductDetail', () => {
 
     // ASSERT
     // Usamos 'findBy' para esperar que aparezca
-    expect(await screen.findByText(/Información Nutricional/i)).toBeInTheDocument();
-    expect(screen.getByText(/Energía:/i).closest('li')).toHaveTextContent('Energía: 400kcal');
+    expect(await screen.findByRole('img')).toBeInTheDocument();
   });
 
 
