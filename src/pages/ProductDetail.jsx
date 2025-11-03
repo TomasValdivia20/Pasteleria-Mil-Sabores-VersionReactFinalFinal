@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CarritoContext } from "../context/CarritoContext";
+import StickerInfoNutricional from "../components/StickerInfoNutricional.jsx";
 import "../css/ProductDetail.css";
 
 const ProductDetail = () => {
@@ -113,29 +114,23 @@ const ProductDetail = () => {
             </div>
           )}
 
-          {/* Nutrición */}
+  {/* Nutrición */}
           {tamanoSeleccionado?.nutricion && (
-            <div className="nutricion">
-              <h4>Información Nutricional (por porción)</h4>
-              <ul>
-                <li><strong>Peso total:</strong> {tamanoSeleccionado.nutricion.peso}</li>
-                <li><strong>Energía:</strong> {tamanoSeleccionado.nutricion.energia}</li>
-                <li><strong>Porción:</strong> {tamanoSeleccionado.nutricion.porcion}</li>
-                <li><strong>Proteínas:</strong> {tamanoSeleccionado.nutricion.proteinas}</li>
-                <li><strong>Grasas:</strong> {tamanoSeleccionado.nutricion.grasas}</li>
-                <li><strong>Carbohidratos:</strong> {tamanoSeleccionado.nutricion.carbohidratos}</li>
-                <li><strong>Azúcares:</strong> {tamanoSeleccionado.nutricion.azucares}</li>
-                <li><strong>Sodio:</strong> {tamanoSeleccionado.nutricion.sodio}</li>
-              </ul>
-            </div>
-          )}
-
-          {/* Notas */}
-          {producto.notas && (
-            <p className="notas">
-              <em>{producto.notas}</em>
-            </p>
-          )}
+            <div className="nutricion-sticker-container ">
+              {
+              /* Sticker de información nutricional */
+              }
+            <StickerInfoNutricional
+            nutritionData={tamanoSeleccionado.nutricion}
+            sizeDescription={
+              tamanoSeleccionado.personas
+                ? `${tamanoSeleccionado.personas} personas`
+                : tamanoSeleccionado.descripcion || "Tamaño único"
+            }
+            productNotes={producto.notas} 
+          />
+          </div>
+        )}
         </div>
       </div>
     </div>
