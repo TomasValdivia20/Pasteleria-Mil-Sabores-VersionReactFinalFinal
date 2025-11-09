@@ -24,7 +24,7 @@ export default function Categorias() {
             aria-label={`Ver productos de ${cat.nombre}`}
           >
             <div className="categoria-card">
-              <img src={cat.imagen} alt={cat.nombre} className="categoria-imagen" />
+              <img src={`${import.meta.env.BASE_URL}${cat.imagen}`} alt={cat.nombre} className="categoria-imagen" />
               <div className="categoria-meta">
                 <h3 className="categoria-nombre">{cat.nombre}</h3>
                 <p className="categoria-descripcion">{cat.descripcion}</p>

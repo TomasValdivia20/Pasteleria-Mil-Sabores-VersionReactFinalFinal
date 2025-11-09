@@ -40,13 +40,13 @@ function CategoriaDetallePage() {
 
       <div className="productos-grid">
         {productos.map((producto) => (
-          <Link key={producto.id} to={`/producto/${producto.id}`} className="producto-card">
-            <img
-              src={producto.imagen}
-              alt={producto.nombre}
-              className="producto-imagen"
-            />
-            <h3 className="producto-nombre">{producto.nombre}</h3>
+<Link key={producto.id} to={`/producto/${producto.id}`} className="producto-card">
+            <img
+              src={`${import.meta.env.BASE_URL}${producto.imagen}`}
+              alt={producto.nombre}
+            	className="producto-imagen"
+            />
+            <h3 className="producto-nombre">{producto.nombre}</h3>
             <p className="producto-precio">
             Desde ${producto.tamaños?.[0]?.precio.toLocaleString("es-CL") || "—"}
           </p>

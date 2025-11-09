@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CarritoContext } from "../context/CarritoContext";
 import StickerInfoNutricional from "../components/StickerInfoNutricional.jsx";
+import { cargarProductos } from "../assets/data/dataLoader";
 import "../css/ProductDetail.css";
 
 const ProductDetail = () => {
@@ -11,19 +12,18 @@ const ProductDetail = () => {
   const [tamanoSeleccionado, setTamanoSeleccionado] = useState(null);
   const [mensaje, setMensaje] = useState({ texto: "", tipo: "" }); // ✅ notificación (texto + tipo)
 
-  useEffect(() => {
-    fetch("/data/productos.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const encontrado = data.find((p) => p.id.toString() === id.toString());
-        setProducto(encontrado);
-        if (encontrado?.tamaños?.length === 1) {
-          setTamanoSeleccionado(encontrado.tamaños[0]);
-        }
-      })
-      .catch((err) => console.error("Error cargando productos:", err));
-  }, [id]);
+useEffect(() => {
+    const obtenerProducto = async () => {
+      const data = await cargarProductos(); // <-- ✅ Usa la función corregida
+      const encontrado = data.find((p) => p.id.toString() === id.toString());
+      setProducto(encontrado);
+      if (encontrado?.tamaños?.length === 1) {
+        setTamanoSeleccionado(encontrado.tamaños[0]);
+      }
+    };
 
+    obtenerProducto();
+  }, [id]);
   if (!producto) return <div className="cargando">Cargando producto...</div>;
 
   const handleAgregar = () => {
@@ -53,9 +53,9 @@ const ProductDetail = () => {
   return (
     <div className="producto-detalle">
       <div className="detalle-contenido">
-        <div className="detalle-imagen">
-          <img src={producto.imagen} alt={producto.nombre} />
-        </div>
+    <div className="detalle-imagen">
+          <img src={`${import.meta.env.BASE_URL}${producto.imagen}`} alt={producto.nombre} />
+      </div>
 
         <div className="detalle-info">
           <h2>{producto.nombre}</h2>
