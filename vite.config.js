@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Pasteleria-Mil-Sabores-VersionReactFinalFinal/',
+  base: "/Pasteleria-Mil-Sabores-VersionReactFinalFinal/",
   // Añade esta sección 'test':
   test: {
     globals: true,

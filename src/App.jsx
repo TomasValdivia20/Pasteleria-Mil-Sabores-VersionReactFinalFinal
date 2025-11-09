@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 /* --- BLOQUE DE CSS --- */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/general.css";
@@ -9,6 +8,7 @@ import "./css/Home.css";
 // Contextos
 import { UserProvider } from "./context/UserContext";
 import { CarritoProvider } from "./context/CarritoContext";
+import { Routes, Route } from "react-router-dom"; 
 
 // Componentes globales
 import Header from "./components/Header";
@@ -48,7 +48,6 @@ function App() {
   return (
     <UserProvider>
       <CarritoProvider>
-        <Router>
           <Header />
           <main className="main-content">
             <Routes>
@@ -83,10 +82,9 @@ function App() {
               <Route path="/backoffice/Reportes" element={<BackofficeReportes />} />
               <Route path="/backoffice/Perfil" element={<BackofficePerfil />} />
               <Route path="/backoffice" element={<BackofficeDashboard />} />
-            </Routes>
+              </Routes>
           </main>
           <Footer />
-        </Router>
       </CarritoProvider>
     </UserProvider>
   );

@@ -1,22 +1,21 @@
-// src/assets/data/dataLoader.js
 
-export async function fetchData(fileName) {
+async function fetchData(fileName) {
   try {
-    const response = await fetch(`/data/${fileName}.json`);
+    const response = await fetch(`${import.meta.env.BASE_URL}data/${fileName}.json`);
     if (!response.ok) {
       throw new Error(`No se pudo cargar ${fileName}.json`);
     }
-    return await response.json();
+    return await response.json(); 
   } catch (error) {
     console.error("Error al cargar datos:", error);
     return [];
   }
 }
 
-export async function cargarCategorias() {
-  return await fetchData("categorias");
-}
+export const cargarCategorias = async () => {
+  return fetchData("categorias"); 
+};
 
-export async function cargarProductos() {
-  return await fetchData("productos");
-}
+export const cargarProductos = async () => {
+  return fetchData("productos"); 
+};
