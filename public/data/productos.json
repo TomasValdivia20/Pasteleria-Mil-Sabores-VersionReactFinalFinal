@@ -7,7 +7,7 @@
 
 "descripcion": "Bizcocho negro, crema chantilly y mermelada de guinda ácida.",
 
-"imagen": "./assets/img/bizcochuelo.jpg/",
+"imagen": "/assets/img/bizcochuelo.jpg/",
 
 "categoriaId": 1,
 
@@ -41,7 +41,7 @@
 
 "descripcion": "Bizcocho blanco bañado en mezcla de leches, cubierto con merengue y crema chantilly.",
 
-"imagen": "./assets/img/torta-tres-leches.jpeg",
+"imagen": "/assets/img/torta-tres-leches.jpeg",
 
 "categoriaId": 1,
 
@@ -75,7 +75,7 @@
 
 "descripcion": "Bizcochuelo blanco con crema de lúcuma, cubierto con chocolate y cereales grageados.",
 
-"imagen": "./assets/img/brazo-lucuma.jpg",
+"imagen": "/assets/img/brazo-lucuma.jpg",
 
 "categoriaId": 2,
 
@@ -97,7 +97,7 @@
 
 "descripcion": "Bizcochuelo blanco con crema mocca, licor de café y praliné de almendras.",
 
-"imagen": "./assets/img/brazo-mocca.jpg",
+"imagen": "/assets/img/brazo-mocca.jpg",
 
 "categoriaId": 2,
 
@@ -121,7 +121,7 @@
 
 "descripcion": "Capas de hojarasca con manjar, crema chantilly y trozos de nuez.",
 
-"imagen": "./assets/img/torta-hojarasca-nuez.jpg",
+"imagen": "/assets/img/torta-hojarasca-nuez.jpg",
 
 "categoriaId": 3,
 
@@ -155,7 +155,7 @@
 
 "descripcion": "Torta de hojarasca rellena con manjar y mermelada natural de frambuesa.",
 
-"imagen": "./assets/img/torta-hojarasca-frambuesa.jpg",
+"imagen": "/assets/img/torta-hojarasca-frambuesa.jpg",
 
 "categoriaId": 3,
 
@@ -189,7 +189,7 @@
 
 "descripcion": "Kuchen de frutillas frescas con crema pastelera y masa artesanal.",
 
-"imagen": "./assets/img/kuchen-frutilla.jpg",
+"imagen": "/assets/img/kuchen-frutilla.jpg",
 
 "categoriaId": 4,
 
@@ -211,7 +211,7 @@
 
 "descripcion": "Kuchen de manzanas caramelizadas con miga streusel crocante.",
 
-"imagen": "./assets/img/kuchen-manzana.jpg",
+"imagen": "/assets/img/kuchen-manzana.jpg",
 
 "categoriaId": 4,
 
@@ -233,7 +233,7 @@
 
 "descripcion": "Pastelitos individuales rellenos con manjar y espolvoreados con azúcar flor.",
 
-"imagen": "./assets/img/chilenitos.jpg",
+"imagen": "/assets/img/chilenitos.jpg",
 
 "categoriaId": 5,
 
@@ -255,7 +255,7 @@
 
 "descripcion": "Masas rellenas con manjar, horneadas hasta dorar y espolvoreadas con azúcar flor.",
 
-"imagen": "./assets/img/cachitos.jpg",
+"imagen": "/assets/img/cachitos.jpg",
 
 "categoriaId": 5,
 
@@ -277,7 +277,7 @@
 
 "descripcion": "Queso crema horneado con mermelada de maracuyá y crocante de almendras.",
 
-"imagen": "./assets/img/cheesecake-maracuya.jpg",
+"imagen": "/assets/img/cheesecake-maracuya.jpg",
 
 "categoriaId": 6,
 
@@ -299,7 +299,7 @@
 
 "descripcion": "Queso crema horneado con frambuesas naturales y base de galletas.",
 
-"imagen": "./assets/img/cheesecake-frambuesa.jpg",
+"imagen": "/assets/img/cheesecake-frambuesa.jpg",
 
 "categoriaId": 6,
 
@@ -321,7 +321,7 @@
 
 "descripcion": "Berlín artesanal relleno con manjar y espolvoreado con azúcar flor.",
 
-"imagen": "./assets/img/berlin-manjar.jpg",
+"imagen": "/assets/img/berlin-manjar.jpg",
 
 "categoriaId": 7,
 
@@ -343,7 +343,7 @@
 
 "descripcion": "Crujientes galletas largas bañadas parcialmente en chocolate.",
 
-"imagen": "./assets/img/galletas-lengua-gato.jpg",
+"imagen": "/assets/img/galletas-lengua-gato.jpg",
 
 "categoriaId": 7,
 
@@ -367,7 +367,7 @@
 
 "descripcion": "Queque tradicional con frutos secos, nueces, almendras y cáscaras confitadas.",
 
-"imagen": "./assets/img/pan-de-pascua.jpg",
+"imagen": "/assets/img/pan-de-pascua.jpg",
 
 "categoriaId": 8,
 
@@ -389,7 +389,7 @@
 
 "descripcion": "Torta de cuchuflís artesanales rellenos con manjar y base de merengue.",
 
-"imagen": "./assets/img/torta-cuchuflis.jpg",
+"imagen": "/assets/img/torta-cuchuflis.jpg",
 
 "categoriaId": 8,
 
