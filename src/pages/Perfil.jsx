@@ -34,8 +34,9 @@ export default function Perfil() {
           <p><strong>RUT:</strong> {usuario.rut}</p>
           <p><strong>Nombre:</strong> {usuario.nombre} {usuario.apellido}</p>
           <p><strong>Correo:</strong> {usuario.correo}</p>
-          <p><strong>Dirección:</strong> {usuario.direccion}</p>
           <p><strong>Región:</strong> {usuario.region}</p>
+          <p><strong>Comuna:</strong> {usuario.comuna}</p>
+          <p><strong>Dirección:</strong> {usuario.direccion}</p>
         </div>
 
         <button className="btn-logout" onClick={handleLogout}>

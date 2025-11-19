@@ -1,7 +1,11 @@
+// src/pages/Registro.jsx
+
 import "../css/Registro.css";
 import "../css/general.css";
 import { useState } from "react";
 import { validarFormulario } from "../utils/validarFormulario";
+// Importamos los datos JSON de Regiones y Comunas
+import { REGIONES_Y_COMUNAS } from "../utils/dataRegiones";
 
 export default function Registro() {
   const [formData, setFormData] = useState({
@@ -10,6 +14,7 @@ export default function Registro() {
     apellido: "",
     correo: "",
     region: "",
+    comuna: "",
     direccion: "",
     contrasena: "",
   });
@@ -19,13 +24,23 @@ export default function Registro() {
   const [cargando, setCargando] = useState(false);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Función ESPECÍFICA para el cambio de Región
+  const handleRegionChange = (e) => {
+    const regionSeleccionada = e.target.value;
+
+    // Al cambiar región, actualizamos la región Y reseteamos la comuna
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      region: regionSeleccionada,
+      comuna: ""
     });
   };
 
-      const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const erroresValidacion = validarFormulario(formData);
 
@@ -33,9 +48,8 @@ export default function Registro() {
       setErrores(erroresValidacion);
       return;
     }
-
     try {
-      // 1️⃣ Verificar si el correo ya existe en el servidor
+      // Verificar si el correo ya existe en el servidor
       const response = await fetch(`http://localhost:3001/usuarios?correo=${formData.correo}`);
       const existentes = await response.json();
 
@@ -44,7 +58,7 @@ export default function Registro() {
         return;
       }
 
-      // 2️⃣ Guardar nuevo usuario en servidor
+      //  Guardar nuevo usuario en servidor
       const res = await fetch("http://localhost:3001/usuarios", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -60,14 +74,13 @@ export default function Registro() {
         apellido: "",
         correo: "",
         region: "",
+        comuna: "",  
         direccion: "",
         contrasena: "",
       });
     } catch (error) {
       console.error(error);
-
-      // ⚙️ MODO DEMO: se activa cuando no hay conexión con json-server
-      try {
+       try {
         const usuariosLocales = JSON.parse(localStorage.getItem("usuariosDemo")) || [];
         const existeCorreo = usuariosLocales.some(u => u.correo === formData.correo);
 
@@ -86,6 +99,7 @@ export default function Registro() {
           apellido: "",
           correo: "",
           region: "",
+          comuna: "",
           direccion: "",
           contrasena: "",
         });
@@ -95,13 +109,12 @@ export default function Registro() {
     }
   };
 
-
-
   return (
     <div className="registro-container">
       <form className="registro-form" onSubmit={handleSubmit}>
         <h2>Registro</h2>
 
+        {/*Inputs de RUT, Nombre, Apellido y Correo */}
         <label>RUT (11111111-1)</label>
         <input
           type="text"
@@ -142,32 +155,49 @@ export default function Registro() {
         />
         {errores.correo && <span className="error">{errores.correo}</span>}
 
+        {/* SECCIÓN DE REGIÓN Y COMUNA */}
+        
         <label>Región</label>
         <select
           name="region"
           value={formData.region}
-          onChange={handleChange}
+          onChange={handleRegionChange} //  Usamos el handler específico
           disabled={cargando}
         >
           <option value="">Selecciona una región</option>
-          <option value="Región de Arica y Parinacota">Región de Arica y Parinacota</option>
-          <option value="Región de Tarapacá">Región de Tarapacá</option>
-          <option value="Región de Antofagasta">Región de Antofagasta</option>
-          <option value="Región de Atacama">Región de Atacama</option>
-          <option value="Región de Coquimbo">Región de Coquimbo</option>
-          <option value="Región de Valparaíso">Región de Valparaíso</option>
-          <option value="Región Metropolitana">Región Metropolitana</option>
-          <option value="Región del Libertador General Bernardo O’Higgins">Región del Libertador General Bernardo O’Higgins</option>
-          <option value="Región del Maule">Región del Maule</option>
-          <option value="Región del Ñuble">Región del Ñuble</option>
-          <option value="Región del Biobío">Región del Biobío</option>
-          <option value="Región de La Araucanía">Región de La Araucanía</option>
-          <option value="Región de Los Ríos">Región de Los Ríos</option>
-          <option value="Región de Los Lagos">Región de Los Lagos</option>
-          <option value="Región de Aysén">Región de Aysén</option>
-          <option value="Región de Magallanes y la Antártica Chilena">Región de Magallanes y la Antártica Chilena</option>
+          {/* Mapeamos desde el JSON importado */}
+          {REGIONES_Y_COMUNAS.map((reg, index) => (
+            <option key={index} value={reg.nombre}>
+              {reg.nombre}
+            </option>
+          ))}
         </select>
         {errores.region && <span className="error">{errores.region}</span>}
+
+        <label>Comuna</label>
+        <select
+          name="comuna"
+          value={formData.comuna}
+          onChange={handleChange}
+          // Se habilita solo si hay región seleccionada
+          disabled={!formData.region || cargando} 
+        >
+          <option value="">
+            {formData.region ? "Selecciona una comuna" : "Primero selecciona una región"}
+          </option>
+          
+          {/* Lógica para filtrar las comunas de la región seleccionada */}
+          {formData.region &&
+            REGIONES_Y_COMUNAS.find((reg) => reg.nombre === formData.region)?.comunas.map((comuna, index) => (
+              <option key={index} value={comuna}>
+                {comuna}
+              </option>
+            ))
+          }
+        </select>
+        {/* Si quisieras mostrar error de comuna, iría aquí */}
+
+        {/* FIN SECCIÓN MODIFICADA */}
 
         <label>Dirección</label>
         <input
@@ -179,6 +209,7 @@ export default function Registro() {
         />
         {errores.direccion && <span className="error">{errores.direccion}</span>}
 
+        {/* Resto del formulario */}
         <label>Contraseña</label>
         <input
           type="password"
